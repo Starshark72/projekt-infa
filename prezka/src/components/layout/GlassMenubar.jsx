@@ -11,7 +11,7 @@ export default function GlassMenubar({ currentSection = 'Home' }) {
   const start = (
     <div className="flex align-items-center gap-3">
       <i className="pi pi-bolt" style={{ fontSize: '1.2rem', color: 'var(--accent-primary)' }} />
-      <span className="menubar-logo">Antigravity Prezentacja</span>
+      <span className="menubar-logo">Projekt Infa</span>
       <div className="menubar-divider" />
       <span className="menubar-section-title">{currentSection}</span>
     </div>
@@ -33,6 +33,7 @@ export default function GlassMenubar({ currentSection = 'Home' }) {
           cursor: 'pointer',
           transition: 'var(--transition-smooth)',
         }}
+        onClick={() => window.open('https://github.com/Starshark72/projekt-infa', '_blank')}
       />
     </div>
   );

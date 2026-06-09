@@ -856,3 +856,213 @@ code {
     height: 42px;
   }
 }
+
+/* ============================================================
+   SKILL 5 — TRYBY CHAOSU & SPEED DIAL
+   ============================================================ */
+
+/* ─── SpeedDial — główny przycisk ─── */
+.chaos-main-btn.p-button {
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #38bdf8, #818cf8) !important;
+  border: none !important;
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4), 0 0 40px rgba(129, 140, 248, 0.2) !important;
+  transition: var(--transition-spring) !important;
+  font-size: 1.3rem !important;
+}
+.chaos-main-btn.p-button:hover {
+  transform: scale(1.1) rotate(15deg) !important;
+  box-shadow: 0 6px 30px rgba(56, 189, 248, 0.6), 0 0 60px rgba(129, 140, 248, 0.3) !important;
+}
+.chaos-main-btn--active.p-button {
+  background: linear-gradient(135deg, #f87171, #fbbf24) !important;
+  box-shadow: 0 4px 20px rgba(248, 113, 113, 0.5) !important;
+  animation: chaos-pulse 1.5s ease-in-out infinite !important;
+}
+
+@keyframes chaos-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(248,113,113,0.4); }
+  50% { box-shadow: 0 4px 40px rgba(248,113,113,0.8), 0 0 60px rgba(251,191,36,0.3); }
+}
+
+/* SpeedDial akcja-przyciski */
+.chaos-speeddial .p-speeddial-action {
+  background: rgba(15, 23, 42, 0.9) !important;
+  border: 1px solid rgba(56, 189, 248, 0.2) !important;
+  color: var(--accent-primary) !important;
+  backdrop-filter: blur(12px) !important;
+  transition: var(--transition-spring) !important;
+}
+.chaos-speeddial .p-speeddial-action:hover {
+  background: rgba(56, 189, 248, 0.15) !important;
+  border-color: var(--accent-primary) !important;
+  transform: scale(1.15) !important;
+}
+.chaos-btn-active.p-speeddial-action {
+  background: rgba(248, 113, 113, 0.2) !important;
+  border-color: #f87171 !important;
+  color: #f87171 !important;
+}
+
+/* ─── TRYB A: Odwróć Grawitację ─── */
+@keyframes float-card {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(0.5deg); }
+  75% { transform: translateY(-4px) rotate(-0.5deg); }
+}
+
+@keyframes spin-180 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(180deg); }
+}
+
+body.chaos-gravity .glass-panel {
+  animation: float-card 3s ease-in-out infinite;
+}
+body.chaos-gravity .p-card {
+  animation: float-card 3s ease-in-out infinite;
+}
+body.chaos-gravity .section-badge {
+  animation: spin-180 0.8s ease-out forwards;
+}
+body.chaos-gravity .p-dock {
+  transform: scaleX(-1);
+  transition: transform 0.5s ease;
+}
+body.chaos-gravity .anatomy-card {
+  animation: float-card 2.5s ease-in-out infinite;
+}
+/* Gradient tła rośnie */
+body.chaos-gravity::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 120%, rgba(129, 140, 248, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  animation: float-card 3s ease-in-out infinite;
+}
+
+/* ─── TRYB B: Glitch Mode — klasa na samym elemencie ─── */
+/* (efekt glitchu obsługiwany przez JS — innerHTML podmiana) */
+/* Dodaj efekt trzęsącego się tła */
+body.chaos-glitch-active {
+  animation: glitch-shake 0.1s ease-in-out infinite;
+}
+
+@keyframes glitch-shake {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(1px, -1px); }
+  60% { transform: translate(-1px, -1px); }
+  80% { transform: translate(1px, 1px); }
+}
+
+/* Efekt scan-line nałożony przez JS */
+.glitch-scanlines::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 200, 0.02) 2px,
+    rgba(0, 255, 200, 0.02) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+  animation: scanline-move 8s linear infinite;
+}
+@keyframes scanline-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100vh; }
+}
+
+/* ─── TRYB C: Neon Mode ─── */
+body.chaos-neon .glass-panel {
+  box-shadow:
+    0 0 15px rgba(56, 189, 248, 0.4),
+    0 0 30px rgba(56, 189, 248, 0.2),
+    inset 0 0 15px rgba(56, 189, 248, 0.05) !important;
+  border-color: rgba(56, 189, 248, 0.5) !important;
+}
+body.chaos-neon .p-button:not(.p-button-text):not(.easter-egg) {
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.5), 0 0 25px rgba(56, 189, 248, 0.2) !important;
+}
+body.chaos-neon .p-card {
+  box-shadow:
+    0 0 15px rgba(192, 132, 252, 0.3),
+    0 0 30px rgba(192, 132, 252, 0.1) !important;
+  border: 1px solid rgba(192, 132, 252, 0.3) !important;
+}
+body.chaos-neon .p-menubar,
+body.chaos-neon .p-dock {
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3) !important;
+  border-color: rgba(56, 189, 248, 0.4) !important;
+}
+body.chaos-neon h1,
+body.chaos-neon h2 {
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.6), 0 0 40px rgba(129, 140, 248, 0.3);
+  transition: text-shadow 0.3s ease;
+}
+body.chaos-neon .section-badge {
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+  animation: neon-flicker 3s ease-in-out infinite;
+}
+
+@keyframes neon-flicker {
+  0%, 100% { opacity: 1; box-shadow: 0 0 15px rgba(56, 189, 248, 0.4); }
+  92% { opacity: 1; }
+  93% { opacity: 0.8; box-shadow: 0 0 5px rgba(56, 189, 248, 0.2); }
+  94% { opacity: 1; }
+  96% { opacity: 0.9; }
+  97% { opacity: 1; box-shadow: 0 0 25px rgba(56, 189, 248, 0.7); }
+}
+
+/* ─── EffectsSection — karty trybów ─── */
+.effects-mode-card {
+  border: 1px solid var(--surface-border) !important;
+  background: var(--surface-card) !important;
+  transition: var(--transition-smooth);
+  animation-delay: var(--delay, 0ms);
+}
+.effects-mode-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.3) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(56, 189, 248, 0.08) !important;
+}
+.effects-mode-card .p-card-body {
+  padding: 1.5rem !important;
+  height: 100%;
+}
+.effects-mode-card .p-card-content {
+  height: 100%;
+  padding: 0 !important;
+}
+
+.effects-tip-box {
+  background: rgba(56, 189, 248, 0.05);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* ─── Scroll Reveal (Intersection Observer) ─── */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.scroll-reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+

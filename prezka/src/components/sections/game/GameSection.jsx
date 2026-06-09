@@ -107,6 +107,7 @@ export default function GameSection() {
           {/* Easter Egg */}
           {currentSlide.easterEgg && (
             <EasterEgg
+              key={currentSlide.easterEgg.id}
               id={currentSlide.easterEgg.id}
               icon={currentSlide.easterEgg.icon}
               points={currentSlide.easterEgg.points}

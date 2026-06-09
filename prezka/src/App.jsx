@@ -1,9 +1,10 @@
 import AppShell from './components/layout/AppShell';
+import ChaosSpeedDial from './components/layout/ChaosSpeedDial';
 import HomeSection from './components/sections/HomeSection';
 import AnatomySection from './components/sections/anatomy/AnatomySection';
 import CodeInspectorSection from './components/sections/code/CodeInspectorSection';
 import GameSection from './components/sections/game/GameSection';
-import PlaceholderSection from './components/sections/PlaceholderSection';
+import EffectsSection from './components/sections/effects/EffectsSection';
 
 /**
  * App — główny komponent aplikacji-prezentacji.
@@ -20,12 +21,10 @@ export default function App() {
 
       <GameSection />
 
-      <PlaceholderSection
-        id="effects"
-        icon="pi pi-sparkles"
-        title="Efekty Wizualne"
-        subtitle="Magiczny przycisk, tryby chaosu i animacje przewijania."
-      />
+      <EffectsSection />
+
+      {/* Globalny SpeedDial — Tryby Chaosu */}
+      <ChaosSpeedDial />
     </AppShell>
   );
 }
