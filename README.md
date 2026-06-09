@@ -44,7 +44,7 @@ Aplikacja oparta jest o najnowsze standardy przemysłu web-developmentu:
 
 ## 🌐 Live Demo
 
-Zapraszam do testów pod adresem: [kliknij tutaj!](https://starshark72.github.io/prezka/) 
+Zapraszam do testów pod adresem: [kliknij tutaj!](https://starshark72.github.io/projekt-infa/) 
 
 
 ## ⚙️ Jak uruchomić to cudo u siebie?
