@@ -2,6 +2,7 @@ import AppShell from './components/layout/AppShell';
 import HomeSection from './components/sections/HomeSection';
 import AnatomySection from './components/sections/anatomy/AnatomySection';
 import CodeInspectorSection from './components/sections/code/CodeInspectorSection';
+import GameSection from './components/sections/game/GameSection';
 import PlaceholderSection from './components/sections/PlaceholderSection';
 
 /**
@@ -17,12 +18,7 @@ export default function App() {
 
       <CodeInspectorSection />
 
-      <PlaceholderSection
-        id="game"
-        icon="pi pi-trophy"
-        title="Tryb Gry"
-        subtitle="Prezentacja w formie gry eksploracyjnej z systemem punktowym i Easter Eggs."
-      />
+      <GameSection />
 
       <PlaceholderSection
         id="effects"

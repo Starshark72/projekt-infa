@@ -57,7 +57,7 @@ export default function CodeInspectorSection() {
         które napędziły Antigravity do stworzenia tego interfejsu.
       </p>
 
-      <div className="flex flex-column xl:flex-row gap-5 w-full mx-auto" style={{ maxWidth: '1200px' }}>
+      <div className="flex flex-column lg:flex-row gap-4 w-full mx-auto" style={{ maxWidth: '1200px' }}>
         
         {/* Lewa kolumna: Terminal / IDE */}
         <div className="flex-1 min-w-0 glass-panel p-0 overflow-hidden inspector-terminal">
@@ -136,7 +136,7 @@ export default function CodeInspectorSection() {
         </div>
 
         {/* Prawa kolumna: Metryki */}
-        <div className="w-full xl:w-20rem glass-panel p-4 flex flex-column align-items-center justify-content-center">
+        <div className="w-full lg:w-25rem glass-panel p-4 flex flex-column align-items-center justify-content-center">
           <h3 className="text-center font-semibold text-sm mb-4 opacity-80" style={{ letterSpacing: '0.1em', textTransform: 'uppercase' }}>
             Metryki Twórcze
           </h3>
