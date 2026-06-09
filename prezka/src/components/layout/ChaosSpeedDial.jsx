@@ -147,7 +147,7 @@ export default function ChaosSpeedDial() {
         <SpeedDial
           model={items}
           direction="up"
-          style={{ position: 'fixed', bottom: '6rem', right: '1.5rem', zIndex: 1000 }}
+          style={{ position: 'fixed', bottom: '6rem', right: '1.5rem', zIndex: 9999 }}
           buttonClassName={`chaos-main-btn ${activeMode ? 'chaos-main-btn--active' : ''}`}
           buttonIcon={activeMode ? 'pi pi-times' : 'pi pi-bolt'}
           showIcon="pi pi-bolt"
