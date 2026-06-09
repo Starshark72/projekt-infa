@@ -44,6 +44,9 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+body {
   margin: 0;
   padding: 0;
 }
@@ -404,6 +407,285 @@ code {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* ============================================================
+   ANATOMY SECTION — Oś czasu komponentów
+   ============================================================ */
+.anatomy-timeline-wrapper {
+  width: 100%;
+  max-width: 900px;
+  padding: 1rem 0;
+}
+
+/* Timeline connector line */
+.anatomy-timeline .p-timeline-event-connector {
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.2) 0%, rgba(129, 140, 248, 0.2) 100%);
+}
+
+/* Custom marker */
+.anatomy-marker {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 2px solid var(--marker-color, var(--accent-primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-spring);
+  position: relative;
+}
+
+.anatomy-marker i {
+  font-size: 1rem;
+  color: var(--marker-color, var(--accent-primary));
+  transition: var(--transition-smooth);
+}
+
+.anatomy-marker:hover {
+  transform: scale(1.15);
+  background: var(--marker-color, var(--accent-primary));
+  box-shadow: 0 0 24px color-mix(in srgb, var(--marker-color, var(--accent-primary)) 35%, transparent);
+}
+
+.anatomy-marker:hover i {
+  color: #fff;
+}
+
+/* Card */
+.anatomy-card.p-card {
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.08);
+  border-left: 3px solid var(--card-accent, var(--accent-primary));
+  border-radius: 12px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  max-width: 360px;
+}
+
+.anatomy-card.p-card:hover {
+  border-color: var(--card-accent, var(--accent-primary));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.anatomy-card .p-card-body {
+  padding: 1rem 1.25rem;
+}
+
+.anatomy-card .p-card-content {
+  padding: 0;
+}
+
+.anatomy-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.anatomy-card-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.anatomy-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--card-accent, var(--accent-primary));
+  opacity: 0.7;
+  transition: var(--transition-smooth);
+}
+
+.anatomy-card:hover .anatomy-card-cta {
+  opacity: 1;
+}
+
+/* ─── Sidebar ─── */
+.anatomy-sidebar.p-sidebar {
+  background: rgba(10, 14, 26, 0.95);
+  backdrop-filter: blur(24px);
+  border-left: 1px solid rgba(56, 189, 248, 0.1);
+}
+
+.anatomy-sidebar .p-sidebar-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.08);
+}
+
+.anatomy-sidebar .p-sidebar-content {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.sidebar-header-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+/* Code block inside sidebar */
+.anatomy-code-block {
+  background: rgba(10, 14, 26, 0.8);
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  border-radius: 10px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.anatomy-code-block pre {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.7;
+  color: var(--accent-primary);
+  white-space: pre-wrap;
+}
+
+/* Live Preview container */
+.live-preview-container {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.live-preview-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: rgba(56, 189, 248, 0.06);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.08);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.live-preview-header i {
+  font-size: 0.7rem;
+}
+
+.live-preview-content {
+  padding: 1rem;
+}
+
+/* ============================================================
+   CODE INSPECTOR SECTION — Hakerski Terminal
+   ============================================================ */
+.inspector-terminal {
+  background: rgba(8, 11, 18, 0.9) !important; /* Ciemniejsze, terminalowe tło */
+  border-color: rgba(56, 189, 248, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-header {
+  background: rgba(15, 23, 42, 0.8);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot-red { background: #ef4444; }
+.dot-yellow { background: #f59e0b; }
+.dot-green { background: #10b981; }
+
+/* Nadpisanie PrimeReact TabView pod styl terminala */
+.terminal-tabs .p-tabview-nav {
+  background: transparent;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+  padding: 0 1rem;
+}
+.terminal-tabs .p-tabview-nav li .p-tabview-nav-link {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 1rem;
+  transition: var(--transition-smooth);
+}
+.terminal-tabs .p-tabview-nav li:not(.p-highlight):not(.p-disabled):hover .p-tabview-nav-link {
+  color: var(--text-primary);
+  background: rgba(56, 189, 248, 0.05);
+}
+.terminal-tabs .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary);
+  background: rgba(56, 189, 248, 0.05);
+}
+.terminal-tabs .p-tabview-panels {
+  background: transparent;
+  padding: 0;
+}
+
+/* Wnętrze terminala */
+.terminal-content {
+  padding: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #a7f3d0; /* Jasny, hakerski zielony dla promptów */
+}
+
+/* ScrollPanel w terminalu */
+.terminal-scroll .p-scrollpanel-bar {
+  background: rgba(56, 189, 248, 0.2);
+}
+
+/* Typewriter efekt */
+.typewriter-text {
+  white-space: pre-wrap;
+}
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+  color: var(--accent-primary);
+  font-weight: bold;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Inplace podgląd skilli */
+.skill-title-link {
+  color: #38bdf8;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  transition: var(--transition-smooth);
+}
+.skill-title-link:hover {
+  color: #818cf8;
+  text-shadow: 0 0 8px rgba(129, 140, 248, 0.5);
+}
+.skill-content-block {
+  opacity: 0.9;
+  color: #cbd5e1;
+}
+
+/* Pre block reset for terminal */
+.code-pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-all;
 }
 
 /* ============================================================

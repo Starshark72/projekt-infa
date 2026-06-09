@@ -1,5 +1,7 @@
 import AppShell from './components/layout/AppShell';
 import HomeSection from './components/sections/HomeSection';
+import AnatomySection from './components/sections/anatomy/AnatomySection';
+import CodeInspectorSection from './components/sections/code/CodeInspectorSection';
 import PlaceholderSection from './components/sections/PlaceholderSection';
 
 /**
@@ -11,19 +13,9 @@ export default function App() {
     <AppShell>
       <HomeSection />
 
-      <PlaceholderSection
-        id="anatomy"
-        icon="pi pi-sitemap"
-        title="Anatomia Komponentu"
-        subtitle="Interaktywna oś czasu klocków Reacta: State, Props, Hooks, JSX."
-      />
+      <AnatomySection />
 
-      <PlaceholderSection
-        id="code"
-        icon="pi pi-code"
-        title="Inspektor Kodu"
-        subtitle="Hakerski terminal z podglądem skilli, logiki i stylów w czasie rzeczywistym."
-      />
+      <CodeInspectorSection />
 
       <PlaceholderSection
         id="game"
